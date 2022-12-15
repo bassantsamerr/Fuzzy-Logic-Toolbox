@@ -50,7 +50,7 @@ public class FuzzyLogicToolbox {
     }
     public static void Fuzzification(ArrayList<Variable> variables,ArrayList<Integer> crispValues){
         //each variable has n memberships (n->number of fuzzy sets in this variable)
-        for(int i=0;i<variables.size()-1;i++){
+        for(int i=0;i<variables.size();i++){
             int inputCrispValue=crispValues.get(i);
             //in range with this variable
             if(inRangeVariable(variables.get(i),inputCrispValue)){
@@ -70,7 +70,6 @@ public class FuzzyLogicToolbox {
                            double membership=calculateMembership(slope,inputCrispValue,intercept);
                             variables.get(i).getFuzzySets().get(j).setMembership(membership);
                         }
-
                     }
                     else{
                         variables.get(i).getFuzzySets().get(j).setMembership(0);
@@ -202,12 +201,13 @@ public class FuzzyLogicToolbox {
                     System.out.println("Enter the crisp values:\n" +
                             "-----------------------");
                     ArrayList<Integer>crispValues=new ArrayList<>();
-                    for(int i=0;i<variables.size()-1;i++) {
+                    for(int i=0;i<variables.size();i++) {
                         System.out.print(variables.get(i).Name + ": ");
                         int crispValue = sc.nextInt();
                         crispValues.add(crispValue);
                     }
                     Fuzzification(variables,crispValues);
+                    System.out.println(variables.toString());
                 }
                 else{
                     System.out.println("CAN’T START THE SIMULATION! Please add the fuzzy sets and rules first.\n");
@@ -219,17 +219,19 @@ public class FuzzyLogicToolbox {
         }
     }
 }
-//    proj_funding IN [0, 100]
-//        exp_level IN [0, 60]
-//        risk OUT [0, 100]
-//        x
+ /*   proj_funding IN [0, 100]
+      exp_level IN [0, 60]
+      risk OUT [0, 100]
+      x
 
 
-//    beginner TRI 0 15 30
-//        intermediate TRI 15 30 45
-//        expert TRI 30 60 60
+beginner TRI 0 15 30
+intermediate TRI 15 30 45
+expert TRI 30 60 60
 
-//    very_low TRAP 0 0 10 30
-//        low TRAP 10 30 40 60
-//        medium TRAP 40 60 70 90
-//        high TRAP 70 90 100 100
+very_low TRAP 0 0 10 30
+low TRAP 10 30 40 60
+medium TRAP 40 60 70 90
+high TRAP 70 90 100 100
+
+  */
