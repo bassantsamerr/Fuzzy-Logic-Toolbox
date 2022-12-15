@@ -1,12 +1,18 @@
+import java.util.ArrayList;
 
 public class FuzzySet {
     public String Name;
-    public String Type;
+    public String Shape;
 
-    public FuzzySet(String name, String type, int start, int end) {
+    public ArrayList<Point> points;
+
+    public FuzzySet(String name, String shape, ArrayList<Point> points) {
         Name = name;
-        Type = type;
+        Shape = shape;
+        this.points = points;
+    }
 
+    public FuzzySet() {
     }
 
     public String getName() {
@@ -17,12 +23,28 @@ public class FuzzySet {
         Name = name;
     }
 
-    public String getType() {
-        return Type;
+    public String getShape() {
+        return Shape;
     }
 
-    public void setType(String type) {
-        Type = type;
+    public void setShape(String type) {
+        Shape = type;
     }
 
+    public ArrayList<Point> getPoints() {
+        return points;
+    }
+
+    public void setPoints(ArrayList<Point> points) {
+        this.points = points;
+    }
+
+    @Override
+    public String toString() {
+        return "FuzzySet{" +
+                "Name='" + Name + '\'' +
+                ", Shape='" + Shape + '\'' +
+                ", points=" + points +
+                '}';
+    }
 }
