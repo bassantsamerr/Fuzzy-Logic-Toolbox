@@ -3,13 +3,15 @@ import java.util.ArrayList;
 public class FuzzySet {
     public String Name;
     public String Shape;
-
     public ArrayList<Point> points;
 
-    public FuzzySet(String name, String shape, ArrayList<Point> points) {
+    public double membership=-1;
+
+    public FuzzySet(String name, String shape, ArrayList<Point> points, double membership) {
         Name = name;
         Shape = shape;
         this.points = points;
+        this.membership = membership;
     }
 
     public FuzzySet() {
@@ -39,12 +41,21 @@ public class FuzzySet {
         this.points = points;
     }
 
+    public double getMembership() {
+        return membership;
+    }
+
+    public void setMembership(double membership) {
+        this.membership = membership;
+    }
+
     @Override
     public String toString() {
         return "FuzzySet{" +
                 "Name='" + Name + '\'' +
                 ", Shape='" + Shape + '\'' +
                 ", points=" + points +
+                ", membership=" + membership +
                 '}';
     }
 }
