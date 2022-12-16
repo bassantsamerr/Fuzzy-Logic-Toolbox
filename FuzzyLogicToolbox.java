@@ -341,7 +341,7 @@ public class FuzzyLogicToolbox {
                     for(int i=0;i<Rules.size();i++){
                         String[] ruleParts = Rules.get(i).split(" ");
                         //consequents (after "=>")
-
+                        //reem mn hena
                         String outputVariableName=ruleParts[ruleParts.length-2];
                         String outputFuzzySetName=ruleParts[ruleParts.length-1];
                         ArrayList<String> antecedents=new ArrayList<>();
