@@ -334,7 +334,7 @@ public class FuzzyLogicToolbox {
                         int crispValue = sc.nextInt();
                         crispValues.add(crispValue);
                     }
-                    System.out.println("Running the simulation…\n");
+                    System.out.println("Running the simulation....\n");
                     Fuzzification(inputVariables,crispValues);
                     System.out.println("Fuzzification => done");
                     //inference
