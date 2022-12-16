@@ -56,6 +56,6 @@ public class FuzzySet {
                 ", Shape='" + Shape + '\'' +
                 ", points=" + points +
                 ", membership=" + membership +
-                '}';
+                '}'+'\n';
     }
 }

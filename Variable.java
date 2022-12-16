@@ -55,6 +55,6 @@ public class Variable {
                 ", FuzzySets=" + FuzzySets +
                 ", start=" + start +
                 ", end=" + end +
-                '}';
+                '}'+'\n';
     }
 }
